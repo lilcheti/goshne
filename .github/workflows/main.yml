@@ -1,0 +1,35 @@
+name: Post
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+      with:
+        python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+    - name: Post new ones
+      run: |
+        pip install -r req.txt
+        python goshne.py
+      env:
+        LAT: ${{ secrets.LAT }}
+        LONG: ${{ secrets.LONG }}
+    - name: push changes to remote
+      run: |
+        git config --global user.name "lilcheti"
+        git config --global user.email "farbod@tokhmi.xyz"
+        git pull
+        git add -A
+        if [ -z "$(git status --porcelain)" ]; then 
+          echo "No changes"
+        else 
+          git commit -m "updated the data"
+          git push
+        fi
