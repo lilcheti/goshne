@@ -8,5 +8,5 @@ x = requests.get("https://foodparty.zoodfood.com/676858d198d35e7713a47e66ba0755c
 y = json.loads(x.text)
 #print(y["data"]["products"][0]) 
 for ghaza in y["data"]["products"]:
-  if ghaza["discountRatio"] >= 50:
+  if ghaza["discountRatio"] >= 10:
     print(ghaza["vendorCode"])
