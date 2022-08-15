@@ -23,7 +23,7 @@ for ghaza in y["data"]["products"]:
     f = open("goh.txt", "r")
     if str(ghaza["productVariationId"]) not in str(f.read()):
       send(ghaza["vendorCode"])
-    goh += ghaza["productVariationId"]+","
+    goh += str(ghaza["productVariationId"])+","
     
 f = open("goh.txt", "w")
 f.write(goh)
