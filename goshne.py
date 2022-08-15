@@ -5,6 +5,5 @@ lat = os.environ.get("LAT")
 long = os.environ.get("LONG")
 
 x = requests.get("https://foodparty.zoodfood.com/676858d198d35e7713a47e66ba0755c8/mobile-offers/"+str(lat)+"/"+str(long)+"?superType=1")
-print(x.text)
 y = json.loads(x.text)
 print(y["data"]["products"][0]) 
