@@ -21,7 +21,7 @@ for ghaza in y["data"]["products"]:
   if ghaza["discountRatio"] >= 10:
     print(ghaza["vendorCode"])
     f = open("goh.txt", "r")
-    if ghaza["productVariationId"] not in f.read():
+    if ghaza["productVariationId"] not in str(f.read()):
       send(ghaza["vendorCode"])
     goh += ghaza["productVariationId"]+","
     
