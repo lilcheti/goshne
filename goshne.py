@@ -22,7 +22,7 @@ for ghaza in y["data"]["products"]:
     print(ghaza["vendorCode"])
     f = open("goh.txt", "r")
     if str(ghaza["productVariationId"]) not in str(f.read()):
-      send(ghaza["vendorCode"])
+      send("["+ghaza["title"]+"](https://snappfood.ir/restaurant/menu/"+ghaza["vendorCode"]+")")
     goh += str(ghaza["productVariationId"])+","
     
 f = open("goh.txt", "w")
