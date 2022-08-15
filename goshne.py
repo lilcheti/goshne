@@ -1,5 +1,5 @@
 
-import requests,bs4,os,asyncio,sys
+import requests,os
 #session = os.environ.get("TOKEN")
 lat = os.environ.get("LAT")
 long = os.environ.get("LONG")
