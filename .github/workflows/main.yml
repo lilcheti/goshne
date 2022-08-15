@@ -21,6 +21,8 @@ jobs:
       env:
         LAT: ${{ secrets.LAT }}
         LONG: ${{ secrets.LONG }}
+        CHATID: ${{ secrets.CHATID }}
+        TOKEN: ${{ secrets.TOKEN }}
     - name: push changes to remote
       run: |
         git config --global user.name "lilcheti"
