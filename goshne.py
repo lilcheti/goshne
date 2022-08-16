@@ -18,7 +18,7 @@ for i in range(3):
     y = json.loads(x.text)
     #print(y["data"]["products"][0]) 
     for ghaza in y["data"]["products"]:
-      if ghaza["discountRatio"] >= 40:
+      if ghaza["discountRatio"] > 40:
         print(ghaza["vendorCode"])
         f = open("goh.txt", "r")
         if str(ghaza["productVariationId"]) not in str(f.read()):
