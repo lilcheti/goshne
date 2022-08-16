@@ -11,7 +11,6 @@ def send(bot_message):
        return response.json()
 goh = ""
 for i in range(3):
-    send(str(os.environ.get("LOC"+str(i+1))))
     lat = os.environ.get("LAT"+str(i+1))
     long = os.environ.get("LONG"+str(i+1))
     x = requests.get("https://foodparty.zoodfood.com/676858d198d35e7713a47e66ba0755c8/mobile-offers/"+str(lat)+"/"+str(long)+"?superType=1")
@@ -22,7 +21,7 @@ for i in range(3):
         print(ghaza["vendorCode"])
         f = open("goh.txt", "r")
         if str(ghaza["productVariationId"]) not in str(f.read()):
-          send("["+ghaza["title"]+"](https://m.snappfood.ir/selectSideDish/"+str(ghaza["productVariationId"])+") "+str(ghaza["price"]-ghaza["discount"]+ghaza["vendorContainerFee"]+int(ghaza["deliveryFee"])))
+          send("["+ghaza["title"]+"](https://m.snappfood.ir/selectSideDish/"+str(ghaza["productVariationId"])+") %0A"+str(ghaza["price"]-ghaza["discount"]+ghaza["vendorContainerFee"]+int(ghaza["deliveryFee"]))+"%0A"+str(os.environ.get("LOC"+str(i+1))))
         goh += str(ghaza["productVariationId"])+","
     
 f = open("goh.txt", "w")
