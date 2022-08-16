@@ -14,13 +14,31 @@ jobs:
     - uses: actions/setup-python@v3
       with:
         python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-    - name: Post new ones
+    - name: first loc
       run: |
         pip install -r req.txt
         python goshne.py
       env:
         LAT: ${{ secrets.LAT }}
         LONG: ${{ secrets.LONG }}
+        CHATID: ${{ secrets.CHATID }}
+        TOKEN: ${{ secrets.TOKEN }}
+    - name: second loc
+      run: |
+        pip install -r req.txt
+        python goshne.py
+      env:
+        LAT: ${{ secrets.LAT2 }}
+        LONG: ${{ secrets.LONG2 }}
+        CHATID: ${{ secrets.CHATID }}
+        TOKEN: ${{ secrets.TOKEN }}
+    - name: third loc
+      run: |
+        pip install -r req.txt
+        python goshne.py
+      env:
+        LAT: ${{ secrets.LAT3 }}
+        LONG: ${{ secrets.LONG3 }}
         CHATID: ${{ secrets.CHATID }}
         TOKEN: ${{ secrets.TOKEN }}
     - name: push changes to remote
