@@ -19,29 +19,15 @@ jobs:
         pip install -r req.txt
         python goshne.py
       env:
-        LOC_NAME: ${{ secrets.LOC1 }}
-        LAT: ${{ secrets.LAT }}
-        LONG: ${{ secrets.LONG }}
-        CHATID: ${{ secrets.CHATID }}
-        TOKEN: ${{ secrets.TOKEN }}
-    - name: second loc
-      run: |
-        pip install -r req.txt
-        python goshne.py
-      env:
-        LOC_NAME: ${{ secrets.LOC2 }}
-        LAT: ${{ secrets.LAT2 }}
-        LONG: ${{ secrets.LONG2 }}
-        CHATID: ${{ secrets.CHATID }}
-        TOKEN: ${{ secrets.TOKEN }}
-    - name: third loc
-      run: |
-        pip install -r req.txt
-        python goshne.py
-      env:
-        LOC_NAME: ${{ secrets.LOC3 }}
-        LAT: ${{ secrets.LAT3 }}
-        LONG: ${{ secrets.LONG3 }}
+        LOC1: ${{ secrets.LOC1 }}
+        LAT1: ${{ secrets.LAT }}
+        LONG1: ${{ secrets.LONG }}
+        LOC2: ${{ secrets.LOC2 }}
+        LAT2: ${{ secrets.LAT2 }}
+        LONG2: ${{ secrets.LONG2 }}
+        LOC3: ${{ secrets.LOC3 }}
+        LAT3: ${{ secrets.LAT3 }}
+        LONG3: ${{ secrets.LONG3 }}
         CHATID: ${{ secrets.CHATID }}
         TOKEN: ${{ secrets.TOKEN }}
     - name: push changes to remote
