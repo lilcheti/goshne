@@ -19,6 +19,7 @@ jobs:
         pip install -r req.txt
         python goshne.py
       env:
+        LOC_NAME: ${{ secrets.LOC1 }}
         LAT: ${{ secrets.LAT }}
         LONG: ${{ secrets.LONG }}
         CHATID: ${{ secrets.CHATID }}
@@ -28,6 +29,7 @@ jobs:
         pip install -r req.txt
         python goshne.py
       env:
+        LOC_NAME: ${{ secrets.LOC2 }}
         LAT: ${{ secrets.LAT2 }}
         LONG: ${{ secrets.LONG2 }}
         CHATID: ${{ secrets.CHATID }}
@@ -37,6 +39,7 @@ jobs:
         pip install -r req.txt
         python goshne.py
       env:
+        LOC_NAME: ${{ secrets.LOC3 }}
         LAT: ${{ secrets.LAT3 }}
         LONG: ${{ secrets.LONG3 }}
         CHATID: ${{ secrets.CHATID }}
