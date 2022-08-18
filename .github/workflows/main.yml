@@ -30,6 +30,15 @@ jobs:
         LONG3: ${{ secrets.LONG3 }}
         CHATID: ${{ secrets.CHATID }}
         TOKEN: ${{ secrets.TOKEN }}
+    - name: jiro
+      run: |
+        python goshne.py 1
+      env:
+        LOC1: ${{ secrets.LOC1 }}
+        LAT1: ${{ secrets.LAT }}
+        LONG1: ${{ secrets.LONG }}
+        CHATID: ${{ secrets.CHATID_JIRO }}
+        TOKEN: ${{ secrets.TOKEN }}
     - name: push changes to remote
       run: |
         git config --global user.name "lilcheti"
