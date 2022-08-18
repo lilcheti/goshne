@@ -17,7 +17,7 @@ jobs:
     - name: first loc
       run: |
         pip install -r req.txt
-        python goshne.py
+        python goshne.py 3
       env:
         LOC1: ${{ secrets.LOC1 }}
         LAT1: ${{ secrets.LAT }}
