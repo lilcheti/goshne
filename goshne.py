@@ -13,7 +13,7 @@ goh = ""
 f = open(str(os.environ.get("CHATID"))+".txt", "a+")
 f.close()
 d = open(str(os.environ.get("CHATID"))+".txt", "r")
-ff = str(f.read())
+ff = str(d.read())
 g = open(str(os.environ.get("CHATID"))+".txt", "w+")
 
 for i in range(int(sys.argv[1])):
