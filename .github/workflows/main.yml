@@ -39,6 +39,15 @@ jobs:
         LONG1: ${{ secrets.LONG }}
         CHATID: ${{ secrets.CHATID_JIRO }}
         TOKEN: ${{ secrets.TOKEN }}
+    - name: wimp
+      run: |
+        python goshne.py 1
+      env:
+        LOC1: "Piruzi"
+        LAT1: ${{ secrets.LAT_WIMP }}
+        LONG1: ${{ secrets.LONG_WIMP }}
+        CHATID: ${{ secrets.CHATID_WIMP }}
+        TOKEN: ${{ secrets.TOKEN }}
     - name: push changes to remote
       run: |
         git config --global user.name "lilcheti"
