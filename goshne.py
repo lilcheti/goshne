@@ -10,7 +10,7 @@ def send(bot_message):
     
        return response.json()
 goh = ""
-f = open(str(os.environ.get("CHATID"))+".txt", "r")
+f = open(str(os.environ.get("CHATID"))+".txt", "a+")
 ff = str(f.read())
 g = open(str(os.environ.get("CHATID"))+".txt", "w+")
 
