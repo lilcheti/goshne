@@ -10,7 +10,9 @@ def send(bot_message):
     
        return response.json()
 goh = ""
+f = open(str(os.environ.get("CHATID"))+".txt", "r+")
 g = open(str(os.environ.get("CHATID"))+".txt", "w+")
+
 for i in range(int(sys.argv[1])):
     lat = os.environ.get("LAT"+str(i+1))
     long = os.environ.get("LONG"+str(i+1))
@@ -20,7 +22,6 @@ for i in range(int(sys.argv[1])):
     for ghaza in y["data"]["products"]:
       if ghaza["discountRatio"] > 40:
         print(ghaza["vendorCode"])
-        f = open(str(os.environ.get("CHATID"))+".txt", "r+")
         if str(ghaza["productVariationId"]) not in str(f.read()):
           send("["+ghaza["title"]+"](https://m.snappfood.ir/selectSideDish/"+str(ghaza["code"])+") %0A"+str(ghaza["price"]-ghaza["discount"]+ghaza["vendorContainerFee"]+int(ghaza["deliveryFee"]))+"%0A"+str(os.environ.get("LOC"+str(i+1)))+"%0A"+"["+ghaza["vendorTitle"]+"](https://m.snappfood.ir/restaurant/"+ghaza["vendorCode"]+")")
         goh += str(ghaza["productVariationId"])+","
