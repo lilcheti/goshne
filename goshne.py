@@ -11,6 +11,8 @@ def send(bot_message):
        return response.json()
 goh = ""
 f = open(str(os.environ.get("CHATID"))+".txt", "a+")
+f.close()
+d = open(str(os.environ.get("CHATID"))+".txt", "r")
 ff = str(f.read())
 g = open(str(os.environ.get("CHATID"))+".txt", "w+")
 
