@@ -21,7 +21,7 @@ for i in range(int(sys.argv[1])):
     y = json.loads(x.text)
     #print(y["data"]["products"][0]) 
     for ghaza in y["data"]["products"]:
-      if ghaza["discountRatio"] > 40:
+      if ghaza["discountRatio"] > 10:
         print(ghaza["vendorCode"])
         if str(ghaza["productVariationId"]) not in ff:
           send("["+ghaza["title"]+"](https://m.snappfood.ir/selectSideDish/"+str(ghaza["code"])+") %0A"+str(ghaza["price"]-ghaza["discount"]+ghaza["vendorContainerFee"]+int(ghaza["deliveryFee"]))+"%0A"+str(os.environ.get("LOC"+str(i+1)))+"%0A"+"["+ghaza["vendorTitle"]+"](https://m.snappfood.ir/restaurant/"+ghaza["vendorCode"]+")")
