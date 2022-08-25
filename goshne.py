@@ -15,7 +15,8 @@ ff = str(d.read())
 for i in range(int(sys.argv[1])):
     lat = os.environ.get("LAT"+str(i+1))
     long = os.environ.get("LONG"+str(i+1))
-    x = requests.get("https://foodparty.zoodfood.com/676858d198d35e7713a47e66ba0755c8/mobile-offers/"+str(lat)+"/"+str(long)+"?superType=1")
+    x = requests.get("https://foodparty.zoodfood.com/676858d198d35e7713a47e66ba0755c8/mobile-offers/"+str(lat)+"/"+str(long))
+    print(x.text)
     y = json.loads(x.text)
     #print(y["data"]["products"][0]) 
     for ghaza in y["data"]["products"]:
