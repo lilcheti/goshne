@@ -27,6 +27,7 @@ for i in range(int(sys.argv[1])):
           send("["+ghaza["title"]+"](https://m.snappfood.ir/selectSideDish/"+str(ghaza["code"])+") %0A"+str(ghaza["price"]-ghaza["discount"]+ghaza["vendorContainerFee"]+int(ghaza["deliveryFee"]))+"%0A"+str(os.environ.get("LOC"+str(i+1)))+"%0A"+"["+ghaza["vendorTitle"]+"](https://m.snappfood.ir/restaurant/"+ghaza["vendorCode"]+")")
         goh += str(ghaza["productVariationId"])+","
 g = open(str(os.environ.get("CHATID"))+".txt", "w")
+print(goh)
 g.write(goh)
 g.close()    
     
